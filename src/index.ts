@@ -1,13 +1,13 @@
-import * as vscode from 'vscode'
-import { createCompletionItem, getSelection, registerCompletionItemProvider, addEventListener } from '@vscode-use/utils'
+import type * as vscode from 'vscode'
+import { createCompletionItem, getSelection, registerCompletionItemProvider } from '@vscode-use/utils'
 
 export function activate(context: vscode.ExtensionContext) {
-  context.subscriptions.push(registerCompletionItemProvider(['vue', 'css', 'react', 'javasscriptreact', 'typescriptreact', 'typescript', 'html', 'svelte', 'solid','plaintext'], (document) => {
+  context.subscriptions.push(registerCompletionItemProvider(['vue', 'css', 'react', 'javasscriptreact', 'typescriptreact', 'typescript', 'html', 'svelte', 'solid', 'plaintext'], (document) => {
     const { lineText, character } = getSelection()!
     const preInput = lineText[character - 1]
     const text = document.getText()
     const results = []
-    debugger
+
     if (preInput === '#') {
       for (const match of text.matchAll(/\sid="([^"]+)"/g)) {
         if (!match)
@@ -31,16 +31,15 @@ export function activate(context: vscode.ExtensionContext) {
     return results
   }, ['#', '.']))
 
-  context.subscriptions.push(addEventListener('text-change', document => {
-    const { lineText, character } = getSelection()!
-    const endText = lineText.trim()
-    const matchMap = 'document.getElementById("")'
-    const a = endText.slice(endText.length - matchMap.length)
-    if (a === matchMap && lineText[character + 1] === '"') {
-      debugger
-      console.log(vscode)
-    }
-  }))
+  // context.subscriptions.push(addEventListener('text-change', () => {
+  //   const { lineText, character } = getSelection()!
+  //   const endText = lineText.trim()
+  //   const matchMap = 'document.getElementById("")'
+  //   const a = endText.slice(endText.length - matchMap.length)
+  //   if (a === matchMap && lineText[character + 1] === '"') {
+  //     console.log(vscode)
+  //   }
+  // }))
 }
 
 export function deactivate() {
