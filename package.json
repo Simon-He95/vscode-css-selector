@@ -3,7 +3,7 @@
   "name": "vscode-css-selector",
   "displayName": "vscode-css-selector",
   "version": "0.0.3",
-  "packageManager": "pnpm@8.1.1",
+  "packageManager": "pnpm@8.15.9",
   "description": "vscode-css-selector",
   "author": "Simon He <https://github.com/Simon-He95>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "dist"
   ],
   "engines": {
-    "vscode": "^1.77.0"
+    "vscode": "^1.92.0"
   },
   "activationEvents": [
     "onStartupFinished"
@@ -38,25 +38,23 @@
     "test": "vitest",
     "build": "tsup src/index.ts --external vscode",
     "pack": "vsce package --no-dependencies",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
-    "lint:fix": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache --fix",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --cache --fix",
     "publish": "vsce publish --no-dependencies",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm run publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.4",
-    "@types/node": "^18.15.11",
-    "@types/vscode": "^1.77.0",
-    "@vscode-use/utils": "^0.0.14",
+    "@antfu/eslint-config": "^3.0.0",
+    "@types/node": "^18.19.49",
+    "@types/vscode": "^1.92.0",
+    "@vscode-use/utils": "^0.1.27",
     "bumpp": "^9.1.0",
-    "eslint": "^8.37.0",
+    "eslint": "^9.9.1",
     "esno": "^0.16.3",
-    "pnpm": "^8.1.1",
-    "rimraf": "^4.4.1",
+    "pnpm": "^8.15.9",
     "tsup": "^6.7.0",
-    "typescript": "^5.0.3",
-    "vite": "^4.2.1",
+    "typescript": "^5.5.4",
     "vitest": "^0.29.8",
     "vsce": "^2.15.0"
   }
