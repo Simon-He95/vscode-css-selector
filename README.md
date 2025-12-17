@@ -7,10 +7,12 @@ Realize the effect of an element selector, for intermediate element selectors su
 
 ![demo](assets/demo.gif)
 
+Works best in `css`/`scss`/`less`/`postcss`, and in `<style>` blocks of `vue`/`svelte`/`html`. For `javascriptreact`/`typescriptreact`, completions show only inside string/template literals.
+
 ## :coffee:
 
 [buy me a cup of coffee](https://github.com/Simon-He95/sponsor)
 
 ## License
 
-[MIT](./license)
+[MIT](./LICENSE)

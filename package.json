@@ -31,7 +31,15 @@
     "vscode": "^1.92.0"
   },
   "activationEvents": [
-    "onStartupFinished"
+    "onLanguage:css",
+    "onLanguage:html",
+    "onLanguage:javascriptreact",
+    "onLanguage:less",
+    "onLanguage:postcss",
+    "onLanguage:scss",
+    "onLanguage:svelte",
+    "onLanguage:typescriptreact",
+    "onLanguage:vue"
   ],
   "scripts": {
     "dev": "pnpm build --watch",
