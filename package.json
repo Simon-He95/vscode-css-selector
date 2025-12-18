@@ -44,7 +44,7 @@
   "scripts": {
     "dev": "pnpm build --watch",
     "test": "vitest",
-    "build": "tsup src/index.ts --external vscode",
+    "build": "tsdown src/index.ts --external vscode",
     "pack": "vsce package --no-dependencies",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
@@ -53,17 +53,14 @@
     "release": "bumpp && pnpm run publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.0.0",
+    "@antfu/eslint-config": "^6.7.1",
     "@types/node": "^18.19.49",
     "@types/vscode": "^1.92.0",
-    "@vscode-use/utils": "^0.1.27",
+    "@vscode-use/utils": "^0.1.61",
+    "@vscode/vsce": "^3.7.1",
     "bumpp": "^9.1.0",
     "eslint": "^9.9.1",
-    "esno": "^0.16.3",
-    "pnpm": "^8.15.9",
-    "tsup": "^6.7.0",
     "typescript": "^5.5.4",
-    "vitest": "^0.29.8",
-    "vsce": "^2.15.0"
+    "vitest": "^4.0.16"
   }
 }
