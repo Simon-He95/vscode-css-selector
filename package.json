@@ -22,7 +22,7 @@
   "categories": [
     "Other"
   ],
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "icon": "icon.png",
   "files": [
     "dist"
@@ -44,7 +44,7 @@
   "scripts": {
     "dev": "pnpm build --watch",
     "test": "vitest",
-    "build": "tsdown src/index.ts --external vscode",
+    "build": "tsdown src/index.ts --external vscode --format cjs",
     "pack": "vsce package --no-dependencies",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
